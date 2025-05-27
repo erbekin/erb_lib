@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="erb_logo.png" width="200" alt="erb_lib logo">
+  <img src="icon.png" width="200" alt="erb_lib icon">
 </p>
 
 <h1 align="center">erb_lib</h1>
