@@ -172,11 +172,11 @@ namespace erb::coreutils {
     }
 
     // Convenience macros
-#define ERB_TRACE(...) erb::core::Logger::instance().trace(__VA_ARGS__)
-#define ERB_DEBUG(...) erb::core::Logger::instance().debug(__VA_ARGS__)
-#define ERB_INFO(...) erb::core::Logger::instance().info(__VA_ARGS__)
-#define ERB_WARN(...) erb::core::Logger::instance().warn(__VA_ARGS__)
-#define ERB_ERROR(...) erb::core::Logger::instance().error(__VA_ARGS__)
-#define ERB_FATAL(...) erb::core::Logger::instance().fatal(__VA_ARGS__)
+#define ERB_TRACE(...) erb::coreutils::Logger::instance().trace(__VA_ARGS__)
+#define ERB_DEBUG(...) erb::coreutils::Logger::instance().debug(__VA_ARGS__)
+#define ERB_INFO(...) erb::coreutils::Logger::instance().info(__VA_ARGS__)
+#define ERB_WARN(...) erb::coreutils::Logger::instance().warn(__VA_ARGS__)
+#define ERB_ERROR(...) erb::coreutils::Logger::instance().error(__VA_ARGS__)
+#define ERB_FATAL(...) erb::coreutils::Logger::instance().fatal(__VA_ARGS__)
 } // erb::coreutils
 
