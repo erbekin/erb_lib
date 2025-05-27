@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/erbekin/erb_lib/main/.github/assets/erb_logo.png" width="200" alt="erb_lib logo">
+  <img src="https://raw.githubusercontent.com/erbekin/erb_lib/main/erb_logo.png" width="200" alt="erb_lib logo">
 </p>
 
 <h1 align="center">erb_lib</h1>
