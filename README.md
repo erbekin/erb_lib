@@ -1,42 +1,47 @@
-# erb_lib
+<p align="center">
+  <img src="https://raw.githubusercontent.com/erbekin/erb_lib/main/.github/assets/erb_logo.png" width="200" alt="erb_lib logo">
+</p>
 
-**ERB** is an open-source, multi-platform, modern C++ library designed to handle _everything_ — from core systems to experimental madness.
+<h1 align="center">erb_lib</h1>
 
-This project aims to provide a modular, scalable, and lightweight C++ library built with modern architecture and clean design principles. Whether you're prototyping a toy engine or building production-level software, `erb_lib` strives to be your go-to utility layer.
+<p align="center">
+  Modern, multiplatform, modular C++ library for everything.
+</p>
 
-## 🚀 Goals
-
-- Cross-platform compatibility (Windows, Linux, macOS)
-- Clean and maintainable codebase using C++17/20/23 features
-- Zero dependencies by default
-- Lightweight, fast compile-times
-- Modular and extensible architecture
-
-## 🤝 Contributing
-
-We welcome contributions from everyone — whether you're a seasoned C++ architect or just learning the ropes.
-
-Feel free to:
-- Submit issues
-- Open pull requests
-- Suggest new modules or improvements
-- Fix bugs (or make them more fun)
-
-> Don't ask for permission. Just fork it.
-
-## 🧪 Bugs
-
-Bug reports are welcome.  
-Bug **fixes** are even more welcome.  
-Bug **liability**? Not so much. The developers are not responsible for any consequences caused by bugs. If things get really out of hand, please consult your local pest control services 🪳🔫.
-
-## 📄 License
-
-**MIT License**
-
-Use it, hack it, break it, love it.  
-This project is licensed under the MIT License — feel free to use it in personal, academic, or commercial projects.
+<p align="center">
+  <a href="https://cmake.org/"><img src="https://img.shields.io/badge/CMake-3.16+-blue.svg" alt="CMake Badge"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/language-C++20-blue.svg" alt="Language Badge">
+  <img src="https://img.shields.io/badge/status-alpha-orange.svg" alt="Status Badge">
+</p>
 
 ---
 
-Made with ☕ + C++ by passionate devs who believe low-level code doesn't have to be low-energy.
+## 📦 About
+
+**erb_lib** is an open-source C++ library designed to be your flexible, plug-and-play toolkit.  
+Built using modern C++ standards (17/20/23), it’s optimized for clarity, portability, and extensibility.
+
+Use it for anything — from scripting runtimes to game engines or systems programming.  
+It doesn’t tell you how to build, but it builds with you.
+
+---
+
+## ⚙️ Integration
+
+You can easily pull `erb_lib` into your own project via [CMake FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html):
+
+```cmake
+include(FetchContent)
+
+FetchContent_Declare(
+    erb_lib
+    GIT_REPOSITORY https://github.com/erbekin/erb_lib.git
+    GIT_TAG v0.0.7
+)
+
+FetchContent_MakeAvailable(erb_lib)
+
+target_link_libraries(Playground PRIVATE erb::erb)
+```
+
