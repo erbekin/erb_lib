@@ -26,10 +26,12 @@ namespace erb::coreutils {
     public:
         // Singleton access
         static Logger &instance();
+
         // Non-copyable
         Logger(const Logger &) = delete;
 
         Logger &operator=(const Logger &) = delete;
+
         // Configuration
         void set_level(LogLevel level);
 
@@ -86,6 +88,12 @@ namespace erb::coreutils {
         static std::string level_to_string(LogLevel level);
 
         static std::string current_timestamp();
+
+        template<typename T>
+        void format_string(std::ostringstream &oss, const std::string &format, T &&value);
+
+        template<typename T, typename... Args>
+        void format_string(std::ostringstream &oss, const std::string &format, T &&value, Args &&... args);
 
         LogLevel min_level_ = LogLevel::INFO;
         bool console_output_ = true;
@@ -150,7 +158,7 @@ namespace erb::coreutils {
 
     // Helper function for string formatting
     template<typename T>
-    void format_string(std::ostringstream &oss, const std::string &format, T &&value) {
+    void Logger::format_string(std::ostringstream &oss, const std::string &format, T &&value) {
         size_t pos = format.find("{}");
         if (pos != std::string::npos) {
             oss << format.substr(0, pos) << std::forward<T>(value) << format.substr(pos + 2);
@@ -160,7 +168,7 @@ namespace erb::coreutils {
     }
 
     template<typename T, typename... Args>
-    void format_string(std::ostringstream &oss, const std::string &format, T &&value, Args &&... args) {
+    void Logger::format_string(std::ostringstream &oss, const std::string &format, T &&value, Args &&... args) {
         size_t pos = format.find("{}");
         if (pos != std::string::npos) {
             oss << format.substr(0, pos) << std::forward<T>(value);
@@ -179,4 +187,3 @@ namespace erb::coreutils {
 #define ERB_ERROR(...) erb::coreutils::Logger::instance().error(__VA_ARGS__)
 #define ERB_FATAL(...) erb::coreutils::Logger::instance().fatal(__VA_ARGS__)
 } // erb::coreutils
-
